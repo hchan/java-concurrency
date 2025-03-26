@@ -70,7 +70,7 @@ public class DiningPhilosophersReentrantLock {
         
         private void eat() throws InterruptedException {
             System.out.println("Philosopher " + id + " is eating.");
-            Thread.sleep((long) (Math.random() * 1000));
+            Thread.sleep((long) (Math.random() * 1));
         }
         
         private void putDownChopsticks() {
