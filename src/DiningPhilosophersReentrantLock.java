@@ -1,10 +1,10 @@
 import java.util.concurrent.locks.ReentrantLock;
 
-public class DiningPhilosophers {
+public class DiningPhilosophersReentrantLock {
     private static final int NUM_PHILOSOPHERS = 5;
     private final ReentrantLock[] chopsticks = new ReentrantLock[NUM_PHILOSOPHERS];
     
-    public DiningPhilosophers() {
+    public DiningPhilosophersReentrantLock() {
         // Initialize each chopstick as a ReentrantLock
         for (int i = 0; i < NUM_PHILOSOPHERS; i++) {
             chopsticks[i] = new ReentrantLock();
@@ -12,7 +12,7 @@ public class DiningPhilosophers {
     }
     
     public static void main(String[] args) {
-        DiningPhilosophers dp = new DiningPhilosophers();
+        DiningPhilosophersReentrantLock dp = new DiningPhilosophersReentrantLock();
         for (int i = 0; i < NUM_PHILOSOPHERS; i++) {
             new Thread(dp.new Philosopher(i)).start();
         }
