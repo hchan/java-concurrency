@@ -1,4 +1,4 @@
-class SynchronizedSimulationgLock {
+public class SynchronizedSimulationgLock {
     private boolean isLocked = false;
 
     public synchronized void lock() {
