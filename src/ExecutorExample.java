@@ -6,9 +6,9 @@ public class ExecutorExample {
     public static void main(String[] args) {
         ExecutorService executor = Executors.newFixedThreadPool(2);
         List<Future<Integer>> futures = new ArrayList<>();
-       
         for (int i = 0; i < 5; i++) {
             final int taskId = i;
+           
             futures.add(executor.submit( 
                 () -> {
                     try {
@@ -31,5 +31,10 @@ public class ExecutorExample {
             }
         }
         executor.shutdown();
+        try {
+            executor.awaitTermination(1, TimeUnit.MINUTES);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
     }
 }
