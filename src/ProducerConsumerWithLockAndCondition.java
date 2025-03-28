@@ -9,7 +9,7 @@ public class ProducerConsumerWithLockAndCondition {
     private static final int MAX_CAPACITY = 10;  // Max capacity of buffer
     
     // Lock and Condition objects
-    private static final Lock lock = new ReentrantLock();
+    private static final Lock lock = new ReentrantLock(true); // Fair lock
     private static final 
         Condition notFull = lock.newCondition(); // Producer
     private static final 
