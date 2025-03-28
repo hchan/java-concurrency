@@ -10,8 +10,10 @@ public class ProducerConsumerWithLockAndCondition {
     
     // Lock and Condition objects
     private static final Lock lock = new ReentrantLock();
-    private static final Condition notFull = lock.newCondition();
-    private static final Condition notEmpty = lock.newCondition();
+    private static final 
+        Condition notFull = lock.newCondition(); // Producer
+    private static final 
+        Condition notEmpty = lock.newCondition(); // Consumer
     
     // Producer thread
     static class Producer implements Runnable {
